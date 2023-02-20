@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { fecthUniCoin } from "../store/slices/infocoins"
+import "../css/InfoCard.css"
 
 //react.map(x => x.id)
 
@@ -29,11 +30,11 @@ function InfoCoin() {
         <div className='h-100'>
             <div className='row d-flex justify-content-center '>
                 <div className='col-md-4 '>
-                <div className="card mt-5 rounded bg-dark text-center">
+                <div className="card mt-5 rounded  text-center">
                     <div className="mt-2">
-                        <img src={coin.image ? coin.image.large : null} />
+                        <img alt='coin' className='bg-trasparent' src={coin.image ? coin.image.large : null} />
                     </div>
-                    <div className="card-body text-white bg-dark">
+                    <div className="card-body text-white ">
                         <h5 className="card-title text-center  text-warning">
                             {coin.name}
                         </h5>
