@@ -42,7 +42,7 @@ useEffect(() => {
             <Link className="link" to={`/coins/${coin.id}`}>
             <div className="card mt-5 rounded  text-center">
               <div className="mt-2">
-                <img className="bg-dark" src={coin.image} alt={coin.name} />
+                <img className="bg-trasparent" src={coin.image} alt={coin.name} />
               </div>
               <div className="card-body ">
                 <h5 className="card-title text-center  text-warning">
