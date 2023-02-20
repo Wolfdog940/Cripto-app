@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import CriptoCoins from "./componentes/CriptoCoins";
+import Navbar from "./componentes/Navbar";
+import AutoComplete from "./componentes/AutoComplete";
+//redux
+import { Provider } from "react-redux";
+import store from "./store";
+//routes
+import { BrowserRouter ,Route ,Routes } from "react-router-dom"
+import InfoCoin from "./componentes/InfoCoin";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+  <BrowserRouter>
+    <Provider store={store}>
+      <Navbar/>
+      <AutoComplete/>
+        <Routes>
+          <Route path="/" element={<CriptoCoins/>}/>
+          <Route path="/coins/:id" element={<InfoCoin/>}/>
+        </Routes>
+      
+    </Provider>
+  </BrowserRouter>
+    
+    
   );
 }
 
